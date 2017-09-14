@@ -1,1 +1,22 @@
-<router-outlet></router-outlet>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<div class="container-fluid indx-wrapper">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SMS Login</a>
+    </div>
+	<div class="navbar-right button-wrapper">
+	  <button
+			class="btn btn-primary btn-margin"
+			*ngIf="auth.isAuthenticated()"
+			(click)="auth.logout()">
+			  Log Out
+		  </button>
+		 </div>
+  </div>
+  
+</nav>
+
+  <router-outlet></router-outlet>
+
+</div>
