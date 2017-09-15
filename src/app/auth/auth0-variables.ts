@@ -5,7 +5,7 @@ interface AuthConfig {
 }
 
 export const AUTH_CONFIG: AuthConfig = {
-  clientID: 'J_8C-ub0cXavWEKSoGXuwTMow0wX8mTf',
-  domain: 'colfax.auth0.com',
-  callbackURL: 'http://localhost:4200/callback'
+  clientID: 'your-id',
+  domain: 'your-domian',
+  callbackURL: 'your-callback-url'
 };

@@ -11,7 +11,7 @@ export class AuthService {
     domain: AUTH_CONFIG.domain,
     responseType: 'token id_token',
     audience: `https://${AUTH_CONFIG.domain}/userinfo`,
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: AUTH_CONFIG.callbackURL,
     scope: 'openid'
   });
 
@@ -48,8 +48,8 @@ export class AuthService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    // Go back to the home route
-    this.router.navigate(['/']);
+    //go to login
+    this.router.navigate(['/login']);
   }
 
   public isAuthenticated(): boolean {

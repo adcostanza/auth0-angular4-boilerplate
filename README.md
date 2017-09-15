@@ -1,28 +1,23 @@
-# SmsApp
+#Auth0 Angular4 Boilerplate
+I wanted to implement super simple authentication using Auth0 in Angular 4 for admin SPA. 
+This code relies heavily on these samples: https://github.com/auth0-samples/auth0-angular-samples
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
+It takes the Login example and updates it to use CanActivate to protect routes. The example is expanded to enable as many protected components as you want while also working on a real webhost (Namecheap).
 
-## Development server
+##Hash
+The example above does not use hashes, so it fails to actually work on a simple server host like Namecheap. I updated it to remove the callback and have the "index" main page be the callback file so that the hash can be parsed.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Redirect
+In order to make this work well, you should redirect the route urls to the main  page /, i.e.
 
-## Code scaffolding
+/home redirect to /
+/login redirect to /
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The reason for this is these are Angular routes, not real server routes so you will get a 404 if you do not redirect.
 
-## Build
+Redirecting on the server will not affect the app, and will actually make it work better if you accidentally reload one of those URLs by behaving normally.
+##Demo
+See a Demo here: http://acostanza.com/auth0-demo/login
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+##More info
+Post with more details to come
