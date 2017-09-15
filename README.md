@@ -4,14 +4,24 @@ This code relies heavily on these samples: https://github.com/auth0-samples/auth
 
 It takes the Login example and updates it to use CanActivate to protect routes. The example is expanded to enable as many protected components as you want while also working on a real webhost (Namecheap).
 
+## Installation
+
+> npm install
+
+Edit `app\auth\auth0-service.ts`
+
+> npm run prod
+
+Load `dist` via FTP to your server, done.
+
 ## Hash
 The example above does not use hashes, so it fails to actually work on a simple server host like Namecheap. I updated it to remove the callback and have the "index" main page be the callback file so that the hash can be parsed.
 
 ## Redirect
 In order to make this work well, you should redirect the route urls to the main  page /, i.e.
 
-/home redirect to /
-/login redirect to /
+> /home redirect to /
+> /login redirect to /
 
 The reason for this is these are Angular routes, not real server routes so you will get a 404 if you do not redirect.
 
