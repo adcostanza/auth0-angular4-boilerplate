@@ -20,8 +20,8 @@ The example above does not use hashes, so it fails to actually work on a simple 
 ## Redirect
 In order to make this work well, you should redirect the route urls to the main  page /, i.e.
 
-> /home redirect to /
-> /login redirect to /
+` /home redirect to / `
+` /login redirect to / `
 
 The reason for this is these are Angular routes, not real server routes so you will get a 404 if you do not redirect.
 
@@ -30,4 +30,4 @@ Redirecting on the server will not affect the app, and will actually make it wor
 See a Demo here: http://acostanza.com/auth0-demo/login
 
 ## More info
-Post with more details to come
+Read more about the updates I made on [the post on my website](http://acostanza.com/2017/09/15/better-authentication-jwt-auth0/).
